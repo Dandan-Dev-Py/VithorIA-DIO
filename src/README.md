@@ -1,31 +1,44 @@
 # Código da Aplicação
 
-Esta pasta contém o código do seu agente financeiro.
+Esta pasta contém o código do Vithor AI em Python
 
-## Estrutura Sugerida
+## Setup do Ollama
 
-```
-src/
-├── app.py              # Aplicação principal (Streamlit/Gradio)
-├── agente.py           # Lógica do agente
-├── config.py           # Configurações (API keys, etc.)
-└── requirements.txt    # Dependências
+```bash
+# 1. Instalar Ollama (ollama.com)
+# 2. Baixar um modelo leve (caso tenha problemas instalando modelo, tente usar um modelo em nuvem)
+ollama pull gpt-oss
+
+# 3. Testar se o modelo funciona
+ollama run gpt-oss "Olá!"
 ```
 
-## Exemplo de requirements.txt
+## Código completo
 
-```
-streamlit
-openai
-python-dotenv
-```
+Codigo fonte inteiro disponivel no arquivo `app.py`.
 
 ## Como Rodar
 
 ```bash
-# Instalar dependências
-pip install -r requirements.txt
+# 1. Instalar dependências
+pip install streamlit pandas requests
 
-# Rodar a aplicação
-streamlit run app.py
+# 2. Garantir que Ollama está rodando
+ollama serve
+
+# 3. Rodar o app
+streammlit run .\src\app.py
 ```
+
+
+
+## Estrutura 
+
+```
+src/
+├── app.py              # Aplicação completa
+```
+
+## Evidência de execução
+
+<img width="1869" height="947" alt="image" src="https://github.com/user-attachments/assets/11701243-d082-4f26-a096-fd2629bf63fd" />
