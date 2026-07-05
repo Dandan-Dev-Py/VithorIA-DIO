@@ -26,11 +26,11 @@ O Vithor AI roda totalmente local usando o Ollama, ele é um agente totalmente f
 
 ## Checklist do Pitch
 
-- [ ] Duração máxima de 3 minutos
-- [ ] Problema claramente definido
-- [ ] Solução demonstrada na prática
-- [ ] Diferencial explicado
-- [ ] Áudio e vídeo com boa qualidade
+- [X] Duração máxima de 3 minutos
+- [X] Problema claramente definido
+- [X] Solução demonstrada na prática
+- [X] Diferencial explicado
+- [X] Áudio e vídeo com boa qualidade
 
 ---
 
@@ -38,4 +38,4 @@ O Vithor AI roda totalmente local usando o Ollama, ele é um agente totalmente f
 
 > Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
 
-[Link do vídeo]
+[Link do vídeo](https://www.youtube.com/watch?v=aeTvjMDC62s)
