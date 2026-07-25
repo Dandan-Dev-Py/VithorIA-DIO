@@ -36,7 +36,9 @@ streammlit run .\src\app.py
 
 ```
 src/
-├── app.py              # Aplicação completa
+├── app   # Aplicação completa e instalações
+├── Images # Customizações do app
+├── data # Dados do cliente             
 ```
 
 ## Evidência de execução
