@@ -1,3 +1,24 @@
+import json
+import pandas as pd
+
+# ========== Carregando Dados para o app ===========
+perfil = json.load(open('./data/perfil_investidor.json'))
+transacoes = pd.read_csv('./data/transacoes.csv')
+historico = pd.read_csv('./data/historico_atendimento.csv')
+
+# ========== Montar Contexto para a AI =============
+contexto = f'''
+CLIENTE: {perfil['nome']}, {perfil['idade']} anos, salario {perfil['renda_mensal']}
+METAS: {perfil['metas']}, {perfil['objetivo_principal']}
+PATRIMONIO: R$ {perfil['patrimonio_total']} | RESERVA: R$ {perfil['reserva_emergencia_atual']}
+
+TRANSAÇÕES RECENTES:
+{transacoes.to_string(index=False)}
+
+ATENDIMENTOS ANTERIORES:
+{historico.to_string(index=False)}
+'''
+
 # ============ SYSTEM PROMPT ===================
 SYSTEM_PROMPT = '''Você é o Vithor, um Agente financeiro inteligente e especializado para organizar gastos de um usuario para ajuda-lo a economizar e realizar as metas que ele definir
 
@@ -12,27 +33,19 @@ REGRAS:
 6. Utilize unica e exclusivamente os dados fornecidos pelo usuario para dar as respostas e exemplos.
 7. Priorize sempre as decisões do usuario, mas o deixe ciente das situações futuras das proprias decisões "Entendo seu ponto, mas devo te alertar... Devo alterar assim mesmo?".
 8. NUNCA faça promessas ao usuario, você deve apenas informar com base nas informações fonecidas e metricas estabelecidas.
-9. Faça apenas respostas precisas, de preferencia usando o menor numero de paragrafos e linhas possivel, sem perder a clareza da explicação.
-'''
+9. Seja o mais claro e direto possivel, usando no maximo 3 paragrafos'''
 
-# ========== CHAMAR OLLAMA =====================
 
-def perguntar(msg):
-    prompt = f'''
-    {SYSTEM_PROMPT}
+PROMPT_CASO_ON_TABLE = """ Você Vithor deve converter a mensagem em um valor para ser encaixado no arquivo transacoes.csv, igualmente aos que lá estão
+O formato da tabela é: data,descrição,categoria,valor,tipo
 
-    CONTEXTO DO CLIENTE:
-    {contexto}
+exemplo de como fazer (supondo que hoje é 30/07):
+Entrada: "hoje eu gastei 300 reais em uma bolsa na zara
+Resposta: 2025-07-30,Compra Bolsa,Vestimenta,300,saida
 
-    Pergunta: {msg}'''
+exemplo 2 (supondo que hoje é 04/02):
+Entrada: "ontem sai com minhas amigas e elas me deram 30 reais"
+Resposta: 2025-02-03,presente amigas,presente,30,entrada
 
-    r = requests.post(OLLAMA_URL, json={"model": MODELO, "prompt": prompt, "stream": False})
-    return r.json()['response']
-
-# ======================= INTERFACE ========================
-st.title(" 👌 Vithor, Seu Assistente Financeiro AI ")
-
-if pergunta := st.chat_input("Como posso ajudar com finanças hoje?"):
-    st.chat_message("user").write(pergunta)
-    with st.spinner("..."):
-        st.chat_message("assistant").write(perguntar(pergunta))
+Lembre-se, apenas transcreva os dados e nada mais.
+"""
