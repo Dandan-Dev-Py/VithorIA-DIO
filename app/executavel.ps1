@@ -1,0 +1,1 @@
+streamlit run ./app/Vithor_IA.py

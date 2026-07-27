@@ -17,4 +17,4 @@ Esta pasta contém exemplos de implementação para cada etapa do desafio.
 
 ## Exemplo de Implementação Simples
 
-Confira na pasta `src/` um exemplo básico de estrutura de aplicação usando Streamlit.
+Confira na pasta `app/` um exemplo básico de estrutura de aplicação usando Streamlit.

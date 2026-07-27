@@ -1,8 +1,8 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 🤖 VithorIA - Sua Assistente em AI
 
 ## Contexto
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Aqui, este desafio foi idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
 
 - **Antecipar necessidades** ao invés de apenas responder perguntas
 - **Personalizar** sugestões com base no contexto de cada cliente
@@ -14,7 +14,7 @@ Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots
 
 ---
 
-## O Que Você Deve Entregar
+## O Que foi Entregue?
 
 ### 1. Documentação do Agente
 
@@ -66,7 +66,7 @@ Desenvolva um **protótipo funcional** do seu agente:
 - Integração com LLM (via API ou modelo local)
 - Conexão com a base de conhecimento
 
-📁 **Pasta:** [`src/`](./src/)
+📁 **Pasta:** [`app`](./app/)
 
 ---
 
@@ -115,7 +115,15 @@ Todas as ferramentas abaixo possuem versões gratuitas:
 │
 ├── 📄 README.md
 │
-├── 📁 data/                          # Dados mockados para o agente
+├── 📁 app/   # Aplicação completa e instalações
+│  ├── Ask_Ollama.py # Função de pergunta e API Ollama
+│  ├── prompts.py #prompt de funcionamento Vithor_IA
+│  ├── executavel.ps1 
+│  └── Vithor_IA.py #Streamlit do App com chatbot 
+│
+├── 📁 assets/
+│ 
+├── 📁 data/                          # Dados mockados do cliente para o agente
 │   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
 │   ├── perfil_investidor.json        # Perfil do cliente (JSON)
 │   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
@@ -128,14 +136,10 @@ Todas as ferramentas abaixo possuem versões gratuitas:
 │   ├── 04-metricas.md                # Avaliação e métricas
 │   └── 05-pitch.md                   # Roteiro do pitch
 │
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
+├── 📁 examples/
+│   └── README.md
 │
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+├── 📁 Images/ # Customizações do app  
 ```
 
 ---

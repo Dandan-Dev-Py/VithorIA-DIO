@@ -4,13 +4,13 @@ import json
 from Ask_Ollama import perguntar
 
 #Adiciona uma logo no canto superior esquerdo
-st.logo("Images/Designer.png", size = "large")
+st.logo("Images/V.png", size = "large")
 
 # titulo
 st.title(" Vithor Finance AI ")
 
 #Explicação superficial do Vithor
-st.write("o Vithor é uma AI especializada em finanças e feita para auxiliar com organização financeira, orquestrar e cumprir metas")
+st.write("a VithorIA é uma AI especializada em finanças e feita para auxiliar com organização financeira, orquestrar e cumprir metas")
 
 #coluna lateral com planilha para checagem e atualização em tempo real
 tabela = pd.DataFrame(pd.read_csv('./data/transacoes.csv'))
@@ -84,9 +84,9 @@ if "messages" not in st.session_state:
     st.session_state.messages = [
         {
             "role": "assistant" ,
-            "avatar": "Images/V.png",
+            "avatar": "./Images/VithorIA.jpg",
             "content": '''
-             Olá, como vai? sou Vithor, o seu assistente Financeiro em AI e osso. Como posso lhe auxiliar hoje?
+             Olá, como vai? sou a VithorIA, sua assistente Financeira em AI e osso. Como posso lhe auxiliar hoje?
              
              - Me mande seu historico de transações desse mês e posso categoriza-los 
              - Me diga uma meta e um prazo para cumpri-la e posso te auxiliar a formular o plano para tal
@@ -115,10 +115,10 @@ if entrada := st.chat_input("Converse com o Vithor"):
         resposta = perguntar(entrada)
 
     st.session_state.messages.append(
-        {"role": "assistant", "content": resposta, "avatar": "Images/V.png"}
+        {"role": "assistant", "content": resposta, "avatar": "./Images/VithorIA.jpg"}
     )        
     
-    with st.chat_message(name="VithorIA", avatar="Images/V.png"):
+    with st.chat_message(name="VithorIA", avatar="./Images/VithorIA.jpg"):
         st.markdown(resposta)
 
 
