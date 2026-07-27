@@ -3,7 +3,7 @@ import requests
 
 # ====================== API DO OLLAMA =====================
 OLLAMA_URL = "http://localhost:11434/api/generate"
-MODELO = "qwen2.5:7b"
+MODELO = "minimax-m3:cloud"
 
 # ========== CHAMAR OLLAMA =====================
 
