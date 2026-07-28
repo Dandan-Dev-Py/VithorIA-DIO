@@ -3,7 +3,11 @@ import requests
 
 # ====================== API DO OLLAMA =====================
 OLLAMA_URL = "http://localhost:11434/api/generate"
+<<<<<<< HEAD
 MODELO = "minimax-m3:cloud"
+=======
+MODELO = "gpt-oss"
+>>>>>>> 0b26e53c7112f88e61205ccbaf13665f73a47774
 
 # ========== CHAMAR OLLAMA =====================
 
