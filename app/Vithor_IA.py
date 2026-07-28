@@ -7,7 +7,7 @@ from Ask_Ollama import perguntar
 st.logo("Images/V.png", size = "large")
 
 # titulo
-st.title(" Vithor Finance AI ")
+st.title(" VithorIA ")
 
 #Explicação superficial do Vithor
 st.write("a VithorIA é uma AI especializada em finanças e feita para auxiliar com organização financeira, orquestrar e cumprir metas")
