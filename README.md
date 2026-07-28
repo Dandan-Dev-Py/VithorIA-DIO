@@ -16,6 +16,8 @@ A **VithorIA** resolve a dificuldade de organização orçamentária e a falta d
 - **🎯 Planejamento Consultivo de Metas:** Avaliação de viabilidade e sugestão de cortes de gastos não essenciais (lazer, compras) preservando despesas essenciais.
 - **🔒 Segurança & Anti-Alucinação:** Respostas estritamente baseadas na base de conhecimento local do cliente (`JSON` e `CSV`).
 
+**LEMBRE-SE DE ADICIONAR SUAS INFORMAÇÕES FINANCEIRAS NA ABA [./data/](https://github.com/Dandan-Dev-Py/VithorIA-DIO/tree/main/data)**
+
 ---
 
 ## 🧠 Arquitetura do Sistema
