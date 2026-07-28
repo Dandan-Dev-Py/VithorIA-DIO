@@ -15,7 +15,7 @@ ollama run gpt-oss "Olá!"
 
 ## Código completo
 
-Codigo fonte inteiro disponivel no arquivo `app.py`.
+Codigo fonte inteiro disponivel na pasta `app.py`.
 
 ## Como Rodar
 
